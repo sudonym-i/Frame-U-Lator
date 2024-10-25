@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Diagonal Dim</title>
+   <style>
+      #lines {
+         z-index: 5;
+         border-bottom: 17px double rgb(0, 0, 0);
+         border-top: 6px solid rgb(0, 0, 0);
+         content: "";
+         height: 5px;
+         width: 30px;
+         /* padding: 0px 5px 5px 5px; */
+         background-color: rgba(255, 255, 255, 0);
+         border-radius: 2px;
+         /* margin-top: 3vh; */
+         margin-left: 6vw;
+      }
+
+      #lines1 {
+         border-bottom: 17px double rgb(0, 0, 0);
+         border-top: 6px solid rgb(0, 0, 0);
+         content: "";
+         height: 5px;
+         width: 30px;
+         /* padding: 0px 5px 5px 5px; */
+         background-color: rgba(255, 255, 255, 0);
+         border-radius: 2px;
+         margin-top: 3vh;
+         margin-left: 6vw;
+         margin-bottom: 5vh;
+      }
+
+      #drawer {
+         display: none;
+         background-color: rgba(255, 252, 245, 0);
+         /* box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.9); */
+         z-index: 5;
+         margin-top: 0px;
+         border-radius: 10px;
+         height: fit-content;
+         padding-bottom: 50px;
+         padding-right: 50px;
+         margin-bottom: 20px;
+         width: fit-content;
+         flex-direction: column;
+      }
+
+      #seat-cut {
+         z-index: 6;
+         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+         margin-top: 3vh;
+         margin-left: 6vw;
+         text-decoration: none;
+         color: rgb(255, 255, 255);
+         background-color: rgb(0, 0, 0);
+         font-family: lexend;
+         border-color: black;
+         border-radius: 10px;
+         padding: 5px 5px 5px 5px;
+         max-width: fit-content;
+         border-style: solid;
+         border-width: 2px;
+      }
+
+      #cross-dimension {
+         z-index: 6;
+         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+         margin-top: 3vh;
+         margin-left: 6vw;
+         text-decoration: none;
+         border-color: black;
+
+         font-family: lexend;
+         color: rgb(255, 255, 255);
+         background-color: rgb(0, 0, 0);
+         border-radius: 10px;
+         padding: 5px 5px 5px 5px;
+         max-width: fit-content;
+         border-style: solid;
+         border-width: 2px;
+      }
+
+      #home {
+         z-index: 6;
+         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+         margin-top: 3vh;
+         margin-left: 6vw;
+         text-decoration: none;
+         border-color: black;
+         font-family: lexend;
+         color: rgb(255, 255, 255);
+         background-color: rgb(0, 0, 0);
+         border-radius: 10px;
+         padding: 5px 5px 5px 5px;
+         max-width: fit-content;
+         border-style: solid;
+         border-width: 2px;
+      }
+
+      #req {
+         z-index: 6;
+         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+         margin-top: 3vh;
+         margin-left: 6vw;
+         text-decoration: none;
+         border-color: black;
+         font-family: lexend;
+         color: rgb(255, 255, 255);
+         background-color: rgb(0, 0, 0);
+         border-radius: 10px;
+         padding: 5px 5px 5px 5px;
+         max-width: fit-content;
+         border-style: solid;
+         border-width: 2px;
+      }
+
+      #frac {
+         z-index: 6;
+         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+         margin-top: 3vh;
+         margin-left: 6vw;
+         text-decoration: none;
+         border-color: black;
+         font-family: lexend;
+         color: rgb(255, 255, 255);
+         background-color: rgb(0, 0, 0);
+         border-radius: 10px;
+         padding: 5px 5px 5px 5px;
+         max-width: fit-content;
+         border-style: solid;
+         border-width: 2px;
+      }
+
+      #containerTwo {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .container {
+         margin-top: 3vh;
+         font-family: lexend;
+         border-radius: 7px;
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+         justify-items: center;
+      }
+
+      #nestedContainer {
+         display: flex;
+         flex-direction: column;
+         justify-content: left;
+         align-content: center;
+         width: fit-content;
+      }
+
+      #output {
+         border-style: dashed;
+         border-color: black;
+         border-radius: 10px;
+         border-width: 2px;
+         font-size: 30px;
+         font-weight: 550;
+         width: 250px;
+         padding: 5px 5px 5px 5px;
+      }
+
+      .buttons {
+         display: flex;
+         justify-self: left;
+         border-radius: 5px;
+         border-style: none;
+         font-weight: 600;
+         font-size: 15px;
+         background-color: burlywood;
+         color: black;
+         padding: 5px 20px 5px 20px;
+         /* margin: 5px 10px 0px 10px; */
+      }
+
+      .buttons3 {
+         display: flex;
+         justify-self: left;
+         border-radius: 5px;
+         border-style: none;
+         font-weight: 600;
+         font-size: 15px;
+         background-color: burlywood;
+         color: black;
+         padding: 5px 10px 5px 10px;
+         margin: 5px 10px 0px 10px;
+      }
+
+      #valueIn {
+         width: 30px;
+      }
+
+      #icon {
+         height: 30px;
+         margin: 5px 5px 5px 5px;
+         width: fit-content;
+         margin-bottom: 10px;
+         margin-left: 11px;
+      }
+
+      body {
+         font-family: lexend;
+      }
+
+      .box {
+         height: 25px;
+         width: 100px;
+      }
+
+      .navButtons {
+         font-size: 20px;
+      }
+
+      #div1 {
+         display: flex;
+         flex-direction: row;
+         justify-content: start;
+         align-items: center;
+      }
+
+      #div2 {
+         display: flex;
+         flex-direction: row;
+         justify-content: start;
+         align-items: center;
+      }
+
+      #div3 {
+         display: flex;
+         flex-direction: row;
+         justify-content: start;
+         align-items: center;
+      }
+
+      #div4 {
+         display: flex;
+         flex-direction: row;
+         justify-content: start;
+         align-items: center;
+      }
+
+      #layout {
+         z-index: 6;
+         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+         margin-top: 3vh;
+         margin-left: 6vw;
+         text-decoration: none;
+         border-color: black;
+         font-family: lexend;
+         color: rgb(255, 255, 255);
+         background-color: rgb(0, 0, 0);
+         border-radius: 10px;
+         padding: 5px 5px 5px 5px;
+         max-width: fit-content;
+         border-style: solid;
+         border-width: 2px;
+      }
+
+      #plan {
+         z-index: 6;
+         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+         margin-top: 3vh;
+         margin-left: 6vw;
+         text-decoration: none;
+         border-color: black;
+         font-family: lexend;
+         color: rgb(255, 255, 255);
+         background-color: rgb(0, 0, 0);
+         border-radius: 10px;
+         padding: 5px 5px 5px 5px;
+         max-width: fit-content;
+         border-style: solid;
+         border-width: 2px;
+      }
+
+      .background {
+         display: none;
+         position: fixed;
+         z-index: 1;
+         left: 0;
+         top: 0;
+         font-family: lexend;
+         backdrop-filter: blur(10px);
+         width: 100%;
+         height: 100%;
+         overflow: auto;
+         padding-top: 60px;
+      }
+
+      .arefs {
+         padding-left: 5px;
+         padding-right: 5px;
+      }
+
+      #cont {
+         display: flex;
+         justify-content: center;
+      }
+
+      #preview {
+         margin-left: 15px;
+         padding-left: 10px;
+         border-radius: 10px;
+         width: 40vw;
+         border-color: white;
+         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+         font-family: monospace;
+      }
+
+      #convsheet {
+         display: flex;
+         margin-top: 8vh;
+         color: rgb(255, 255, 255);
+         font-family: lexend;
+         border-radius: 5px;
+         padding: 10px 10px 10px 10px;
+         width: fit-content;
+         border-color: rgb(0, 0, 0);
+         background-color: black;
+         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+         font-family: monospace;
+      }
+
+      #encompass {
+         border-style: none;
+         border-color: black;
+         height: fit-content;
+         padding-top: 20px;
+         padding-left: 15px;
+         padding-right: 15px;
+         padding-bottom: 20px;
+         box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5);
+         border-radius: 8px;
+         width: 30vw;
+      }
+
+      .boxfrac {
+         margin-left: 10px;
+         height: 25px;
+         width: 25px;
+      }
+
+      .anothernest {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: start;
+      }
+
+      .buttons2 {
+         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+         display: flex;
+         justify-self: left;
+         margin-left: 5px;
+         border-radius: 5px;
+         border-style: none;
+         font-weight: 600;
+         font-size: 15px;
+         background-color: rgb(0, 0, 0);
+         color: rgb(255, 255, 255);
+         padding: 5px 5px 5px 5px;
+      }
+
+      #plus16one {
+         height: 30px;
+         width: 30px;
+         background-color: burlywood;
+         color: black;
+         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+         border-radius: 5px;
+         border-style: solid;
+         border-width: 0px;
+         margin-right: 10px;
+         margin-left: 4px;
+         font-size: 25px;
+      }
+
+      #plus16two {
+         height: 30px;
+         width: 30px;
+         background-color: burlywood;
+         color: black;
+         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+         border-radius: 5px;
+         border-style: solid;
+         border-width: 0px;
+         margin-right: 10px;
+         margin-left: 4px;
+         font-size: 25px;
+      }
+
+      .purpleContainer {
+         display: flex;
+         flex-direction: row;
+         align-content: center;
+         justify-content: start;
+      }
+
+      #blueContainer {
+         display: flex;
+         flex-direction: row;
+         align-content: center;
+         justify-content: start;
+      }
+   </style>
+</head>
+
+<body>
+   <div id="lines1"></div>
+   <div id="drawer">
+      <div id="lines"></div>
+      <div id="div1">
+         <a class="navButtons" id="home" href="index.html">Home</a>
+         <a class="navButtons" id="seat-cut" href="seat-cut.html">Seat-Cut</a>
+      </div>
+      <div id="div2">
+         <a class="navButtons" id="cross-dimension" href="cross-dimension.html">Square</a>
+         <a class="navButtons" id="frac" href="frac.html">Calculator</a>
+      </div>
+      <div id="div3">
+         <a class="navButtons" id="plan" href="plan-dims.html">Plan-Dim</a>
+         <a class="navButtons" id="layout" href="layoutFRAC.html">Layout</a>
+      </div>
+      <div id="div4">
+         <a class="navButtons" id="req" href="req.html">Request</a>
+      </div>
+   </div>
+   <div id="background" class="background"></div>
+   <p id="convsheet"><b>Conversion-Sheet</b></p>
+   <div id="encompass">
+      <div class="container">
+         <!-- <canvas id="illustration"></canvas> -->
+         <form onsubmit="return calculate()">
+            <label style="font-size: 20px" for="input">Enter the width and height of object you wish to square</label>
+            <br />
+            <br />
+            <div class="purpleContainer">
+               <input type="number" id="valueIn1" class="box" style="margin-bottom: 5px" placeholder="Width of object"
+                  required />
+               <input type="number" id="FracIn1" class="boxfrac" style="margin-bottom: 5px" placeholder="A/B" />
+               <button id="plus16one">+</button>
+            </div>
+            <br />
+            <div id="blueContainer">
+               <input type="number" id="valueIn2" class="box" placeholder="Height of object" required />
+               <input type="number" id="FracIn2" class="boxfrac" style="margin-bottom: 5px" placeholder="A/B" />
+               <button id="plus16two">+</button>
+            </div>
+            <br />
+            <br />
+            <div class="anothernest">
+               <button class="buttons" id="button" type="submit">Calculate</button>
+               <button class="buttons2" id="clear" type="submit">CLR</button>
+            </div>
+         </form>
+      </div>
+      <div id="containerTwo">
+         <h1 id="output"></h1>
+         <div id="nestedContainer">
+            <div id="icon">
+               <!-- <p id="feedback">--</p> -->
+            </div>
+            <button class="buttons3" id="save" onclick="return save()">Save</button>
+            <button class="buttons3" id="dowload" onclick="return download()">Download</button>
+            <p id="hiddenElement" style="display: none"></p>
+            <p id="hiddenElement2" style="display: none"></p>
+         </div>
+      </div>
+   </div>
+   <p id="preview"></p>
+   <script>
+      const delay = (delayInms) => {
+         return new Promise((resolve) => setTimeout(resolve, delayInms));
+      };
+      let plusBtn2 = "off";
+      let plusBtn1 = "off";
+      let count = 1;
+      let type = "small";
+      document.getElementById("plus16two").addEventListener("click", changeStatus2);
+      document.getElementById("plus16one").addEventListener("click", changeStatus1);
+      function changeStatus2() {
+         let element = document.getElementById("plus16two");
+         if (plusBtn2 == "off") {
+            plusBtn2 = "on";
+            element.style = "box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.45);;" + "color: black;";
+         } else {
+            plusBtn2 = "off";
+            element.style = "background-color: bisque";
+            element.style = "color: black";
+         }
+      }
+      function changeStatus1() {
+         let element = document.getElementById("plus16one");
+         if (plusBtn1 == "off") {
+            plusBtn1 = "on";
+            element.style = "box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.45);;" + "color: black;";
+         } else {
+            plusBtn1 = "off";
+            element.style = "background-color: bisque";
+            element.style = "color: black";
+         }
+      }
+      function displayDrawer() {
+         ground = document.getElementById("background");
+         ground.style = "display: flex;";
+         drawer = document.getElementById("drawer");
+         drawer.style = "display: flex;";
+         toggle1 = document.getElementById("lines1");
+         toggle1.style = "display: none;";
+      }
+      function hideDrawer() {
+         drawer = document.getElementById("drawer");
+         drawer.style = "display: none;";
+         drawer.style = "z-index: 5;";
+         ground = document.getElementById("background");
+         ground.style = "display: none;";
+         toggle1 = document.getElementById("lines1");
+         toggle1.style = "display: flex;";
+      }
+      function showConversionSheet() {
+         if (type == "small") {
+            sheet = document.getElementById("convsheet");
+            sheet.innerHTML = "Conversion-Sheet: <br><br> 1/8: 0.125   |   1/4: 0.25   |   3/8: 0.375     <br>-----------------------------------<br>5/8: 0.625   |   3/4: 0.75   |   7/8: 0.875 ";
+            type = "expanded";
+         } else {
+            sheet = document.getElementById("convsheet");
+            sheet.innerHTML = "Conversion-Sheet";
+            type = "small";
+         }
+      }
+      document.getElementById("lines1").addEventListener("click", displayDrawer);
+      document.getElementById("clear").addEventListener("click", clear);
+      document.getElementById("lines").addEventListener("click", hideDrawer);
+      document.getElementById("convsheet").addEventListener("click", showConversionSheet);
+      function clear() {
+         let inpt1 = document.getElementById("valueIn1");
+         let inpt2 = document.getElementById("valueIn2");
+         let FracInput1 = document.getElementById("FracIn1");
+         let FracInput2 = document.getElementById("FracIn2");
+         inpt1.value = null;
+         inpt2.value = null;
+         FracInput1.value = null;
+         FracInput2.value = null;
+         let buttonElement = document.getElementById("button");
+         buttonElement.style = "box-shadow: none;";
+      }
+
+      let carrySwitch = 0;
+      function frac(inpt1, i) {
+         let rem = Math.round((inpt1 * i - Math.floor(inpt1 * i)) * 16);
+         if (rem == 16) {
+            carrySwitch = 1;
+         } else {
+            carrySwitch = 0;
+         }
+         const fractionMap = {
+            0: "",
+            1: "1/16",
+            2: "1/8",
+            3: "1/8+",
+            4: "1/4",
+            5: "1/4+",
+            6: "3/8",
+            7: "3/8+",
+            8: "1/2",
+            9: "1/2+",
+            10: "5/8",
+            11: "5/8+",
+            12: "3/4",
+            13: "3/4+",
+            14: "7/8",
+            15: "7/8+",
+            16: "",
+         };
+         return fractionMap[rem];
+      }
+
+      var hiddenElmnt = document.getElementById("hiddenElement");
+      var hiddenElmnt2 = document.getElementById("hiddenElement2");
+      const BMLength = [];
+      const BMLength2 = [];
+      var screen = document.getElementById("output");
+      screen.innerHTML = "- - -<br>- - -<br>- - -<br>";
+      async function calculate() {
+         let buttonElement = document.getElementById("button");
+         buttonElement.style = "box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.45);";
+         let buttonElement2 = document.getElementById("save");
+         buttonElement2.style = "box-shadow: none;";
+         event.preventDefault();
+         let inpt1 = document.getElementById("valueIn1");
+         inpt1 = parseFloat(inpt1.value);
+         let inpt2 = document.getElementById("valueIn2");
+         inpt2 = parseFloat(inpt2.value);
+         let FracInput1 = document.getElementById("FracIn1");
+         let FracInput2 = document.getElementById("FracIn2");
+         if (FracInput1.value != 0) {
+            var divided1 = Math.floor(FracInput1.value / 10);
+            var dividor1 = FracInput1.value - divided1 * 10;
+            console.log(divided1 / dividor1);
+            inpt1 = inpt1 + divided1 / dividor1;
+         }
+         if (FracInput2.value != 0) {
+            var divided2 = Math.floor(FracInput2.value / 10);
+            var dividor2 = FracInput2.value - divided2 * 10;
+            inpt2 = inpt2 + divided2 / dividor2;
+            console.log(divided2 / dividor2);
+         }
+         if (plusBtn1 == "on") {
+            inpt1 += 0.0625;
+         }
+         if (plusBtn2 == "on") {
+            inpt2 += 0.0625;
+         }
+         var print = 100.5;
+         print = inpt1 ** 2 + inpt2 ** 2;
+         console.log(print);
+         print = Math.sqrt(print);
+         if (FracInput2.value != 0) {
+            inpt2.value -= divided2 / dividor2;
+         }
+         if (FracInput1.value != 0) {
+            inpt1.value -= divided1 / dividor1;
+         }
+         screen.innerHTML = `${Math.floor(print + carryFunction(print))}" <span style = "font-size: 24px;">${frac(print, 1)}</span><br> Diagonal-dimension`;
+         hiddenElmnt.innerHTML = `${Math.round(print)}" ${frac(print, 1)}`;
+         hiddenElmnt2.innerHTML = `${Math.round(print)}" ${frac(print, 1)}`;
+         let delayres = await delay(300);
+         buttonElement.style = "box-shadow: none;";
+         return false;
+      }
+
+      function carryFunction(value) {
+         if (Math.round((value - Math.floor(value)) * 16) == 16) {
+            return 1;
+         } else {
+            return 0;
+         }
+      }
+
+      function save() {
+         if (screen.innerHTML != "- - -<br>- - -<br>- - -<br>") {
+            let buttonElement = document.getElementById("save");
+            buttonElement.style = "box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.45);";
+            BMLength.push(`\r\nResult #${count}\r\n ${hiddenElmnt.innerHTML}\r\n\r\n`);
+            BMLength2.push(`<br>Result #${count}<br> ${hiddenElmnt2.innerHTML}<br><br>`);
+            count = count + 1;
+            preview = document.getElementById("preview");
+            preview.innerHTML = BMLength2;
+            return false;
+         }
+      }
+      function download() {
+         let buttonElement = document.getElementById("dowload");
+         buttonElement.style = "box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.45);";
+         const file = new File([BMLength], "SquareCalculatorResults.txt", {
+            type: "text/plain",
+         });
+         const link = document.createElement("a");
+         const url = URL.createObjectURL(file);
+         link.href = url;
+         link.download = file.name;
+         document.body.appendChild(link);
+         link.click();
+         document.body.removeChild(link);
+         window.URL.revokeObjectURL(url);
+         return false;
+      }
+   </script>
+</body>
+
+</html>

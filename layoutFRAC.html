@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple_calcs</title>
+  <style>
+    #lines {
+      z-index: 5;
+      border-bottom: 17px double rgb(0, 0, 0);
+      border-top: 6px solid rgb(0, 0, 0);
+      content: "";
+      height: 5px;
+      width: 30px;
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 2px;
+      margin-left: 6vw;
+    }
+
+    #lines1 {
+      z-index: 5;
+      border-bottom: 17px double rgb(0, 0, 0);
+      border-top: 6px solid rgb(0, 0, 0);
+      content: "";
+      height: 5px;
+      width: 30px;
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 2px;
+      margin-top: 3vh;
+      margin-left: 6vw;
+    }
+
+    #drawer {
+      display: none;
+      background-color: rgba(255, 252, 245, 0);
+      z-index: 5;
+      margin-top: 0px;
+      border-radius: 10px;
+      height: fit-content;
+      padding-bottom: 50px;
+      padding-right: 50px;
+      margin-bottom: 20px;
+      width: fit-content;
+      flex-direction: column;
+    }
+
+    #seat-cut {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      font-family: lexend;
+      border-color: black;
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-self: left;
+      margin-top: 20px;
+      border-radius: 5px;
+      border-style: none;
+      font-weight: 600;
+      font-size: 15px;
+      background-color: burlywood;
+      color: black;
+      padding: 5px 20px 5px 20px;
+      margin-top: 0px;
+    }
+
+    #cross-dimension {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #home {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    .box {
+      height: 25px;
+      width: 100px;
+    }
+
+    #req {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #frac {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    .navButtons {
+      font-size: 20px;
+    }
+
+    #layout {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #plan {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #div1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    #div2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    #div3 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    #div4 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    .background {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      font-family: lexend;
+      backdrop-filter: blur(10px);
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      padding-top: 60px;
+    }
+
+    .arefs {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    #cont {
+      display: flex;
+      justify-content: center;
+    }
+
+    .animatedrawer {
+      -webkit-animation: animateD 0.6s;
+      animation: animateD 0.6s
+    }
+
+    @-webkit-keyframes animateD {
+      from {
+        opacity: 0%;
+      }
+
+      to {
+        opacity: 100%;
+      }
+    }
+
+    @keyframes animateD {
+      from {
+        opacity: 0%;
+      }
+
+      to {
+        opacity: 100%;
+      }
+    }
+
+    #convsheet {
+      margin-left: 2vw;
+      display: flex;
+      margin-top: 16vh;
+      color: rgb(255, 255, 255);
+      font-family: lexend;
+      border-radius: 5px;
+      padding: 10px 10px 10px 10px;
+      width: fit-content;
+      border-color: rgb(0, 0, 0);
+      background-color: black;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      font-family: monospace;
+    }
+
+    .container {
+      font-family: lexend;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-items: center;
+      background-color: rgba(255, 255, 255, 0);
+      border-style: none;
+      border-color: black;
+      height: fit-content;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5);
+      border-radius: 7px;
+      width: 30vw;
+
+    }
+
+    #preview {
+      margin-left: 15px;
+      padding-left: 20px;
+      border-radius: 10px;
+      font-size: 20px;
+      padding-right: 20px;
+      width: fit-content;
+      border-color: white;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      font-family: monospace;
+    }
+
+    .box2 {
+      height: 25px;
+      width: 60px;
+      margin-left: 5px;
+    }
+
+    .box3 {
+      height: 25px;
+      width: 25px;
+      margin-left: 14px;
+    }
+
+    .anothercontainer {
+      display: flex;
+      justify-content: end;
+      flex-direction: row;
+    }
+
+    .buttons2 {
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-left: 5px;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 5px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: none;
+    }
+
+    #plus16 {
+      height: 30px;
+      width: 30px;
+      background-color: burlywood;
+      color: black;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      border-style: solid;
+      border-width: 0px;
+      margin-right: 10px;
+      margin-left: 2px;
+      font-size: 25px;
+    }
+
+    .alignment {
+      display: flex;
+      align-content: center;
+      flex-direction: row;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="lines1"></div>
+  <div id="drawer">
+    <div id="lines"></div>
+    <div id="div1">
+      <a class="navButtons" id="home" href="index.html">Home</a>
+      <a class="navButtons" id="seat-cut" href="seat-cut.html">Seat-Cut</a>
+    </div>
+    <div id="div2">
+      <a class="navButtons" id="cross-dimension" href="cross-dimension.html">Square</a>
+      <a class="navButtons" id="frac" href="frac.html">Calculator</a>
+    </div>
+    <div id="div3">
+      <a class="navButtons" id="plan" href="plan-dims.html">Plan-Dim</a>
+      <a class="navButtons" id="layout" href="layoutFRAC.html">Layout</a>
+    </div>
+    <div id="div4">
+      <a class="navButtons" id="req" href="req.html">Request</a>
+    </div>
+  </div>
+  <div id="background" class="background"></div>
+  <p id="convsheet"><b>Conversion-Sheet</b></p>
+  <div class="container">
+    <form onsubmit=" return list()">
+      <label style="font-size: 20px;" for="input">Enter dimension to be laid out</label>
+      <br>
+      <br>
+      <div class="alignment">
+        <input type="number" id="valueIn1" class="box" style="margin-bottom: 5px;" placeholder="Dim in inches" required>
+        <input type="number" id="fracInput" class="box3" style="margin-bottom: 5px;" placeholder="A/B">
+        <button id="plus16">+</button>
+        <input type="number" id="valueIn2" class="box2" style="margin-bottom: 5px;" placeholder="Multiples" required>
+      </div><br>
+      <br>
+      <div class="anothercontainer">
+        <button class="buttons" id="button" type="submit">Layout</button>
+        <button class="buttons2" id="clear" type="submit">CLR</button>
+      </div>
+    </form>
+  </div>
+  </div>
+  <p id="preview"></p>
+  <script>
+    document.addEventListener("keydown", resetButton)
+    function resetButton() {
+      let buttonElement = document.getElementById("button")
+      buttonElement.style = "box-shadow: none;"
+    }
+    let plusBtn = "off"
+    document.getElementById("plus16").addEventListener("click", changeStatus);
+    function changeStatus() {
+      let element = document.getElementById("plus16")
+      if (plusBtn == "off") { plusBtn = "on"; element.style = "box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.45);;" + "color: black;"; }
+      else { plusBtn = "off"; element.style = "background-color: bisque"; element.style = "color: black"; }
+    }
+    let type = "small"
+    function displayDrawer() {
+      ground = document.getElementById("background");
+      ground.style = "display: flex;";
+      drawer = document.getElementById("drawer");
+      drawer.style = "display: flex;";
+      toggle1 = document.getElementById("lines1");
+      toggle1.style = "display: none;";
+    };
+    function hideDrawer() {
+      drawer = document.getElementById("drawer");
+      drawer.style = "display: none;";
+      drawer.style = "z-index: 5;";
+      ground = document.getElementById("background");
+      ground.style = "display: none;";
+      toggle1 = document.getElementById("lines1");
+      toggle1.style = "display: flex;";
+    };
+    document.getElementById("lines1").addEventListener("click", displayDrawer);
+    document.getElementById("convsheet").addEventListener("click", showConversionSheet);
+    document.getElementById("clear").addEventListener("click", clear);
+    document.getElementById("lines").addEventListener("click", hideDrawer);
+    function showConversionSheet() {
+      if (type == "small") {
+        sheet = document.getElementById("convsheet");
+        sheet.innerHTML = "Conversion-Sheet: <br><br> 1/8: 0.125   |   1/4: 0.25   |   3/8: 0.375     <br>-----------------------------------<br>5/8: 0.625   |   3/4: 0.75   |   7/8: 0.875 ";
+        sheet.style = "margin-left: 0px;"
+        type = "expanded"
+      }
+      else {
+        sheet = document.getElementById("convsheet");
+        sheet.innerHTML = "Conversion-Sheet";
+        sheet.style = "margin-left: 2px;"
+        type = "small"
+      }
+    };
+    function frac(inpt1, i) {
+      let rem = inpt1 * i - (Math.floor(inpt1 * i))
+      rem = Math.round(rem * 16)
+      //now in 16ths
+      let result = ""
+      if (rem == 0) { result = ""; }
+      else if (rem == 1) { result = "1/16"; }
+      else if (rem == 2) { result = "1/8"; }
+      else if (rem == 3) { result = "1/8+"; }
+      else if (rem == 4) { result = "1/4"; }
+      else if (rem == 5) { result = "1/4+"; }
+      else if (rem == 6) { result = "3/8"; }
+      else if (rem == 7) { result = "3/8+"; }
+      else if (rem == 8) { result = "1/2"; }
+      else if (rem == 9) { result = "1/2+"; }
+      else if (rem == 10) { result = "5/8"; }
+      else if (rem == 11) { result = "5/8+"; }
+      else if (rem == 12) { result = "3/4"; }
+      else if (rem == 13) { result = "3/4+"; }
+      else if (rem == 14) { result = "7/8"; }
+      else if (rem == 15) { result = "7/8+"; }
+      else if (rem == 16) { result = ""; }
+      return result
+    };
+    function clear() {
+      let inpt1 = document.getElementById("valueIn1")
+      let inpt2 = document.getElementById("valueIn2")
+      let fracInput = document.getElementById("fracInput")
+      inpt1.value = null
+      inpt2.value = null
+      fracInput.value = null
+      let buttonElement = document.getElementById("button")
+      buttonElement.style = "box-shadow: none;"
+    }
+    function list() {
+      let buttonElement = document.getElementById("button")
+      buttonElement.style = "box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.45);"
+      event.preventDefault()
+      let fracInput = document.getElementById("fracInput")
+      let switch2 = "off"
+      if (fracInput.value == 0) { fracInput.value = 1; switch2 = "on" }
+      let inpt1 = document.getElementById("valueIn1")
+      let inpt2 = document.getElementById("valueIn2")
+      let layout = "<br>"
+      console.log(fracInput.value)
+      if (fracInput.value != 0) {
+        var divided = Math.floor(fracInput.value / 10)
+        var dividor = fracInput.value - (divided * 10)
+        var stolenValue = (+inpt1.value) + (+divided / dividor)
+        if (plusBtn == "on") { stolenValue += .0625 }
+      }
+      if (switch2 == "on") { fracInput.value = null; switch2 = "off"; }
+      for (i = 1; i - 1 < inpt2.value; i++) {
+        layout += (`<span style = "font-size: 13px;">#${i}:</span> ${Math.floor(stolenValue * i)} <span style = "font-size: 13px;"> ${frac(stolenValue, i)}</span> <br><br>`)
+      }
+      preview = document.getElementById("preview")
+      preview.innerHTML = `${layout}`
+      return false
+    };
+  </script>
+</body>
+
+</html>

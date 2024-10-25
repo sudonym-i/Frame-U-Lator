@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seat-Cut</title>
+  <style>
+    #output {
+      border-style: dashed;
+      border-color: black;
+      border-radius: 10px;
+      border-width: 2px;
+      padding: 5px 5px 5px 5px;
+      margin-bottom: 6vh;
+    }
+
+    #button {
+      margin-top: 20px;
+      border-radius: 5px;
+      border-style: none;
+      font-weight: 500;
+      font-size: 20px;
+      font-family: lexend;
+      background-color: burlywood;
+      padding: 5px 20px 5px 20px;
+      box-shadow: none;
+    }
+
+    #valueIn {
+      width: 30px;
+    }
+
+    #lines {
+      z-index: 5;
+      border-bottom: 17px double rgb(0, 0, 0);
+      border-top: 6px solid rgb(0, 0, 0);
+      content: "";
+      height: 5px;
+      width: 30px;
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 2px;
+      margin-left: 6vw;
+    }
+
+    #lines1 {
+      z-index: 5;
+      border-bottom: 17px double rgb(0, 0, 0);
+      border-top: 6px solid rgb(0, 0, 0);
+      content: "";
+      height: 5px;
+      width: 30px;
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 2px;
+      margin-top: 3vh;
+      margin-left: 6vw;
+    }
+
+    #drawer {
+      display: none;
+      background-color: rgba(255, 252, 245, 0);
+      z-index: 5;
+      margin-top: 0px;
+      border-radius: 10px;
+      height: fit-content;
+      padding-bottom: 50px;
+      padding-right: 50px;
+      margin-bottom: 20px;
+      width: fit-content;
+      flex-direction: column;
+    }
+
+    #seat-cut {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      font-family: lexend;
+      border-color: black;
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #cross-dimension {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #home {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #req {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #frac {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    .navButtons {
+      font-size: 20px;
+    }
+
+    #div1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    #div2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    #div3 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    #div4 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    #layout {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #plan {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    .background {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      font-family: lexend;
+      backdrop-filter: blur(10px);
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      padding-top: 60px;
+    }
+
+    .arefs {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    #cont {
+      display: flex;
+      justify-content: center;
+    }
+
+    #encompass {
+      margin-top: 17vh;
+      height: fit-content;
+      border-style: none;
+      border-color: black;
+      height: fit-content;
+      padding-top: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 20px;
+      box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      width: 20vw;
+    }
+
+    .buttons2 {
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 21px;
+      border-radius: 5px;
+      border-style: none;
+      font-weight: 500;
+      font-size: 20px;
+      padding: 5px 10px 5px 10px;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="lines1"></div>
+  <div id="drawer">
+    <div id="lines"></div>
+    <div id="div1">
+      <a class="navButtons" id="home" href="index.html">Home</a>
+      <a class="navButtons" id="seat-cut" href="seat-cut.html">Seat-Cut</a>
+    </div>
+    <div id="div2">
+      <a class="navButtons" id="cross-dimension" href="cross-dimension.html">Square</a>
+      <a class="navButtons" id="frac" href="frac.html">Calculator</a>
+    </div>
+    <div id="div3">
+      <a class="navButtons" id="plan" href="plan-dims.html">Plan-Dim</a>
+      <a class="navButtons" id="layout" href="layoutFRAC.html">Layout</a>
+    </div>
+    <div id="div4">
+      <a class="navButtons" id="req" href="req.html">Request</a>
+    </div>
+  </div>
+  <div id="background" class="background"></div>
+  <div id="encompass">
+    <h1 id="output" style="font-family: lexend"></h1>
+    <form onsubmit=" return calc()">
+      <label style="font-family: lexend" style="font-size: 35px" for="input">Angle
+      </label>
+      <input type="number" id="valueIn" style="height: 25px" style="width: 15px" required />
+      <label style="font-family: lexend" for="input"> over 12</label>
+      <br />
+      <button id="button" type="submit" style="font-family: lexend">
+        Calculate
+      </button>
+      <button class="buttons2" id="clear" type="submit">CLR</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById("clear").addEventListener("click", clear);
+    document.addEventListener("keydown", resetButton);
+    function resetButton() {
+      let buttonElement = document.getElementById("button");
+      buttonElement.style = "box-shadow: none;";
+    }
+    function clear() {
+      let inpt1 = document.getElementById("valueIn");
+      inpt1.value = null;
+      let buttonElement = document.getElementById("button");
+      buttonElement.style = "box-shadow: none;";
+    }
+    let screen = document.getElementById("output");
+    screen.innerHTML = "- - -";
+    function radToDeg(rad) {
+      return rad / (Math.PI / 180);
+    }
+    function calc() {
+      let buttonElement = document.getElementById("button");
+      buttonElement.style =
+        "box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.45);";
+      let inpt = document.getElementById("valueIn");
+      screen.innerHTML = `${180 - (90 + Math.round(radToDeg(Math.atan(inpt.value / 12))))
+        }° Seat-Cut`;
+      return false;
+    }
+    function displayDrawer() {
+      ground = document.getElementById("background");
+      ground.style = "display: flex;";
+      drawer = document.getElementById("drawer");
+      drawer.style = "display: flex;";
+      toggle1 = document.getElementById("lines1");
+      toggle1.style = "display: none;";
+    }
+    function hideDrawer() {
+      drawer = document.getElementById("drawer");
+      drawer.style = "display: none;";
+      drawer.style = "z-index: 5;";
+      ground = document.getElementById("background");
+      ground.style = "display: none;";
+      toggle1 = document.getElementById("lines1");
+      toggle1.style = "display: flex;";
+    }
+    document
+      .getElementById("lines1")
+      .addEventListener("click", displayDrawer);
+    document.getElementById("lines").addEventListener("click", hideDrawer);
+  </script>
+</body>
+
+</html>

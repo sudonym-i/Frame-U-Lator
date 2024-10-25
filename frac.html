@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Na</title>
+  <style>
+    #lines {
+      z-index: 5;
+      border-bottom: 17px double rgb(0, 0, 0);
+      border-top: 6px solid rgb(0, 0, 0);
+      content: "";
+      height: 5px;
+      width: 30px;
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 2px;
+      margin-left: 6vw;
+    }
+
+    #lines1 {
+      z-index: 5;
+      border-bottom: 17px double rgb(0, 0, 0);
+      border-top: 6px solid rgb(0, 0, 0);
+      content: "";
+      height: 5px;
+      width: 30px;
+      /* padding: 0px 5px 5px 5px; */
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 2px;
+      margin-top: 3vh;
+      margin-left: 6vw;
+    }
+
+    #drawer {
+      display: none;
+      background-color: rgba(255, 252, 245, 0);
+      /* box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.9); */
+      z-index: 5;
+      margin-top: 0px;
+      border-radius: 10px;
+      height: fit-content;
+      padding-bottom: 50px;
+      padding-right: 50px;
+      margin-bottom: 20px;
+      width: fit-content;
+      flex-direction: column;
+    }
+
+    #seat-cut {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      font-family: lexend;
+      border-color: black;
+
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #cross-dimension {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #home {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #req {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #frac {
+      z-index: 6;
+      box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.7);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: rgb(48, 48, 48);
+
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #maintxt {
+      display: flex;
+      align-self: center;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10vh;
+      font-size: 20px;
+      padding: 5px 5px 5px 5px;
+      width: 80vw;
+      font-family: lexend;
+      border-radius: 10px;
+      font-weight: 500;
+      background-color: rgb(255, 235, 212);
+    }
+
+    .comtxt {
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-self: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 40vh;
+      font-size: 18px;
+      font-family: lexend;
+      font-weight: 400;
+      background-color: rgb(250, 250, 250);
+      width: 80vw;
+      padding-bottom: 20px;
+      border-radius: 10px;
+      padding-left: 10px;
+      margin-right: 10px;
+      height: fit-content;
+    }
+
+    #link {
+      justify-self: center;
+      margin-top: 3vh;
+      text-decoration: none;
+      background-color: black;
+      color: white;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .navButtons {
+      font-size: 20px;
+    }
+
+    #layout {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #plan {
+      z-index: 6;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-top: 3vh;
+      margin-left: 6vw;
+      text-decoration: none;
+      border-color: black;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      border-radius: 10px;
+      padding: 5px 5px 5px 5px;
+      max-width: fit-content;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+    #div1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    #div2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    #div3 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    #div4 {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+
+    .background {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      font-family: lexend;
+      backdrop-filter: blur(10px);
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      padding-top: 60px;
+    }
+
+    .arefs {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    #cont {
+      display: flex;
+      justify-content: center;
+    }
+
+    .animatedrawer {
+      -webkit-animation: animateD 0.6s;
+      animation: animateD 0.6s;
+    }
+
+    @-webkit-keyframes animateD {
+      from {
+        opacity: 0%;
+      }
+
+      to {
+        opacity: 100%;
+      }
+    }
+
+    @keyframes animateD {
+      from {
+        opacity: 0%;
+      }
+
+      to {
+        opacity: 100%;
+      }
+    }
+
+    .boxes {
+      margin-top: 5vh;
+      padding-top: 10px;
+      width: 18vw;
+      padding-left: 10px;
+      height: 100px;
+      border-width: 2px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 20px;
+    }
+
+    .screens {
+      display: flex;
+      color: rgb(0, 0, 0);
+      border-radius: 10px;
+      border-style: dashed;
+      border-width: 2px;
+      font-weight: 600;
+      font-size: larger;
+      justify-self: flex-start;
+      padding: 15px 15px 15px 10px;
+      width: fit-content;
+      font-family: monospace;
+    }
+
+    .containerOne {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      align-self: center;
+    }
+
+    .buttons {
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border-style: none;
+      font-weight: 500;
+      font-size: 20px;
+      padding: 5px 5px 5px 5px;
+      font-family: lexend;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+    }
+
+    *:focus {
+      outline: none;
+    }
+
+    #save {
+      background-color: burlywood;
+      color: black;
+      font-weight: 700;
+    }
+
+    .encompass {
+      display: lex;
+      padding-left: 10px;
+      align-items: start;
+      flex-direction: column;
+      justify-items: start;
+      background-color: rgba(255, 255, 255, 0);
+      border-style: none;
+      border-color: black;
+      height: fit-content;
+      padding-top: 20px;
+      border-radius: 10px;
+      padding-bottom: 20px;
+      box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.5);
+      width: 20vw;
+    }
+
+    #convsheet {
+      display: flex;
+      color: rgb(255, 255, 255);
+      font-family: lexend;
+      border-radius: 5px;
+      padding: 10px 10px 10px 10px;
+      width: fit-content;
+      border-color: rgb(0, 0, 0);
+      background-color: black;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      font-family: monospace;
+    }
+
+    .buttons2 {
+      margin-left: 5px;
+      display: flex;
+      color: rgb(255, 255, 255);
+      font-family: lexend;
+      border-radius: 5px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      padding-left: 10px;
+      width: fit-content;
+      border-color: rgb(0, 0, 0);
+      background-color: black;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      font-family: monospace;
+      text-decoration: none;
+    }
+
+    .containertwo {
+      margin-top: 5vh;
+      display: flex;
+      align-items: row;
+      justify-content: start;
+      align-items: center;
+      margin-bottom: 7px;
+    }
+
+    #fractxt {
+      margin-left: 7px;
+      font-family: monospace;
+      font-size: smaller;
+    }
+
+    #preview {
+      margin-left: 15px;
+      padding-left: 10px;
+      border-radius: 10px;
+      width: 73vw;
+      border-color: white;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      font-family: monospace;
+    }
+
+    .fracGrid {
+      display: none;
+      grid-template-columns: auto auto auto;
+      align-self: center;
+      justify-content: center;
+      width: 90vw;
+    }
+
+    .fracs {
+      z-index: 5;
+      margin-left: 20px;
+      margin-top: 20px;
+      height: 45px;
+      color: rgb(255, 255, 255);
+      font-family: lexend;
+      border-style: solid;
+      border-radius: 8px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 8px;
+      padding-left: 8px;
+      font-size: 15px;
+      border-color: rgb(0, 0, 0);
+      background-color: black;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+      font-family: monospace;
+      text-decoration: none;
+    }
+
+    #cancelBTN {
+      font-family: lexend;
+      background-color: burlywood;
+      font-weight: 700;
+      color: black;
+      border-style: none;
+      font-size: 20px;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.9);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="lines1"></div>
+  <div id="drawer">
+    <div id="lines"></div>
+    <div id="div1">
+      <a class="navButtons" id="home" href="index.html">Home</a>
+      <a class="navButtons" id="seat-cut" href="seat-cut.html">Seat-Cut</a>
+    </div>
+    <div id="div2">
+      <a class="navButtons" id="cross-dimension" href="cross-dimension.html">Square</a>
+      <a class="navButtons" id="frac" href="frac.html">Calculator</a>
+    </div>
+    <div id="div3">
+      <a class="navButtons" id="plan" href="plan-dims.html">Plan-Dim</a>
+      <a class="navButtons" id="layout" href="layoutFRAC.html">Layout</a>
+    </div>
+    <div id="div4">
+      <a class="navButtons" id="req" href="req.html">Request</a>
+    </div>
+  </div>
+  <div id="background" class="background"></div>
+  <div class="containertwo">
+    <p id="convsheet"><b>Conversion-Sheet</b></p>
+    <a id="functionList" class="buttons2" href="HelpFunc.html">Syntax</a>
+  </div>
+  <div class="fracGrid" id="fracGrid">
+    <button class="fracs" id="one">1/16</button>
+    <button class="fracs" id="two">1/8</button>
+    <button class="fracs" id="three">1/8+</button>
+    <button class="fracs" id="four">1/4</button>
+    <button class="fracs" id="five">1/4+</button>
+    <button class="fracs" id="six">3/8</button>
+    <button class="fracs" id="seven">3/8+</button>
+    <button class="fracs" id="eight">1/2</button>
+    <button class="fracs" id="nine">1/2+</button>
+    <button class="fracs" id="ten">5/8</button>
+    <button class="fracs" id="eleven">5/8+</button>
+    <button class="fracs" id="twelve">3/4</button>
+    <button class="fracs" id="thirteen">3/4+</button>
+    <button class="fracs" id="fourteen">7/8</button>
+    <button class="fracs" id="fifteen">7/8+</button>
+    <button class="fracs" id="cancelBTN">X</button>
+  </div>
+  <div class="encompass" id="encompass">
+    <textarea type="text" id="input1" class="boxes" onblur="if(focusSwitch == true){this.focus()}"></textarea>
+    <p id="screenOne" class="screens">ANS: __</p>
+    <div class="containerOne">
+      <button id="paren" class="buttons">P()</button>
+      <button class="buttons" id="fraction">Frac</button>
+      <button class="buttons" id="save">Save</button>
+      <button class="buttons" id="clear">CLR</button>
+      <button class="buttons" id="Tangent">Deg</button>
+      <button class="buttons" id="ATangent">Type</button>
+    </div>
+  </div>
+  <p id="hiddenElmnt" style="display: none"></p>
+  <p id="preview"></p>
+  <script>
+    let boardType = true;
+    focusSwitch = true;
+    document
+      .getElementById("ATangent")
+      .addEventListener("click", changeBoard);
+    function changeBoard() {
+      if (boardType == true) {
+        boxOne.inputMode = "decimal";
+        boardType = false;
+        focusSwitch = true;
+        boxOne.focus();
+      } else {
+        boxOne.inputMode = "text";
+        boardType = true;
+        focusSwitch = true;
+        boxOne.focus();
+      }
+    }
+    document.getElementById("cancelBTN").addEventListener("click", cancelbtn);
+    function cancelbtn() {
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("one").addEventListener("click", one);
+    async function one() {
+      boxOne.value += "+1/16 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("two").addEventListener("click", two);
+    async function two() {
+      boxOne.value += "+1/8 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("three").addEventListener("click", three);
+    async function three() {
+      boxOne.value += "+3/16 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("four").addEventListener("click", four);
+    async function four() {
+      boxOne.value += "+1/4 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("five").addEventListener("click", five);
+    async function five() {
+      boxOne.value += "+5/16 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("six").addEventListener("click", six);
+    async function six() {
+      boxOne.value += "+3/8 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("seven").addEventListener("click", seven);
+    async function seven() {
+      boxOne.value += "+7/16 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("eight").addEventListener("click", eight);
+    async function eight() {
+      boxOne.value += "+1/2 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("nine").addEventListener("click", nine);
+    async function nine() {
+      boxOne.value += "+9/16 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("ten").addEventListener("click", ten);
+    async function ten() {
+      boxOne.value += "+5/8 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("eleven").addEventListener("click", eleven);
+    async function eleven() {
+      boxOne.value += "+11/16 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("twelve").addEventListener("click", twelve);
+    async function twelve() {
+      boxOne.value += "+3/4 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("thirteen").addEventListener("click", thirteen);
+    async function thirteen() {
+      boxOne.value += "+13/16 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("fourteen").addEventListener("click", fourteen);
+    async function fourteen() {
+      boxOne.value += "+7/8 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    document.getElementById("fifteen").addEventListener("click", fifteen);
+    async function fifteen() {
+      boxOne.value += "+15/16 ";
+      ground.style = "display: none;";
+      document.getElementById("fracGrid").style = "display: none;";
+      screenOne.innerHTML = `ANS:  ${eval(`${boxOne.value}`)} ${frac(
+        eval(boxOne.value),
+        1
+      )}`;
+      focusSwitch = true;
+      boxOne.focus();
+      setCursorPosition(boxOne, 100);
+    }
+    let type = "small";
+    document
+      .getElementById("convsheet")
+      .addEventListener("click", showConversionSheet);
+    function showConversionSheet() {
+      if (type == "small") {
+        sheet = document.getElementById("convsheet");
+        sheet.innerHTML =
+          "Conversion-Sheet: <br><br> 1/8: 0.125   |   1/4: 0.25   |   3/8: 0.375     <br>-----------------------------------<br>5/8: 0.625   |   3/4: 0.75   |   7/8: 0.875 ";
+        sheet.style = "margin-left: 0px;";
+        type = "expanded";
+      } else {
+        sheet = document.getElementById("convsheet");
+        sheet.innerHTML = "Conversion-Sheet";
+        sheet.style = "margin-left: 2px;";
+        type = "small";
+      }
+    }
+    const delay = (delayInms) => {
+      return new Promise((resolve) => setTimeout(resolve, delayInms));
+    };
+    let screenOne = document.getElementById("screenOne");
+    let boxOne = document.getElementById("input1");
+    addEventListener("keydown", async (event) => {
+      let delayres = await delay(20);
+      screenOne.innerHTML = `ANS:  ${roundFunction(
+        eval(`${boxOne.value}`)
+      )} ${frac(eval(boxOne.value), 1)}`;
+    });
+    addEventListener("change", async (event) => {
+      let delayres = await delay(20);
+      screenOne.innerHTML = `ANS:  ${roundFunction(
+        eval(`${boxOne.value}`)
+      )} ${frac(eval(boxOne.value), 1)}`;
+    });
+    function roundFunction(input) {
+      input *= 1000;
+      input = Math.round(input);
+      return input / 1000;
+    }
+    document.getElementById("paren").addEventListener("click", parenFunc);
+    document.getElementById("clear").addEventListener("click", clearBox);
+    document.getElementById("Tangent").addEventListener("click", radtodeg);
+    function setCursorPosition(inputElem, position) {
+      if (inputElem.setSelectionRange) {
+        inputElem.focus();
+        inputElem.setSelectionRange(position, position);
+      }
+    }
+    function radtodeg() {
+      boxOne.value += "/(Math.PI/180)";
+    }
+    document
+      .getElementById("fraction")
+      .addEventListener("mousedown", fracFunc);
+    boxOne.value = null;
+    function fracFunc() {
+      focusSwitch = false;
+      ground = document.getElementById("background");
+      ground.style = "display: flex;";
+      document.getElementById("fracGrid").style = "display: grid;";
+    }
+    document.getElementById("save").addEventListener("click", save);
+    let count = 1;
+    const saveArray = [];
+    async function save() {
+      if (boxOne.value != null) {
+        document.getElementById("save").style =
+          "box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.45);";
+        saveArray.push(
+          `<br>Result #${count}<br><br> ${boxOne.value}<br>----------<br> ${screenOne.innerHTML}<br><br>`
+        );
+        count = count + 1;
+        focusSwitch = false;
+        boxOne.blur();
+        // feedback.innerHTML = "Saved"
+        preview = document.getElementById("preview");
+        focusSwitch = true;
+        preview.innerHTML = saveArray;
+        let delayres = await delay(300);
+        focusSwitch = true;
+        document.getElementById("save").style =
+          "box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);";
+        return false;
+      }
+    }
+    function frac(inpt1, i) {
+      if (inpt1 - Math.floor(inpt1) == 0.0) {
+        return "";
+      }
+      let rem = inpt1 * i - Math.floor(inpt1 * i);
+      rem = Math.round(rem * 16);
+      //now in 16ths
+      let result = "";
+      if (rem == 0) {
+        result = "";
+      } else if (rem == 1) {
+        result = "1/16";
+      } else if (rem == 2) {
+        result = "1/8";
+      } else if (rem == 3) {
+        result = "1/8+";
+      } else if (rem == 4) {
+        result = "1/4";
+      } else if (rem == 5) {
+        result = "1/4+";
+      } else if (rem == 6) {
+        result = "3/8";
+      } else if (rem == 7) {
+        result = "3/8+";
+      } else if (rem == 8) {
+        result = "1/2";
+      } else if (rem == 9) {
+        result = "1/2+";
+      } else if (rem == 10) {
+        result = "5/8";
+      } else if (rem == 11) {
+        result = "5/8+";
+      } else if (rem == 12) {
+        result = "3/4";
+      } else if (rem == 13) {
+        result = "3/4+";
+      } else if (rem == 14) {
+        result = "7/8";
+      } else if (rem == 15) {
+        result = "7/8+";
+      } else if (rem == 16) {
+        result = "";
+      }
+      return `| ${Math.floor(inpt1)}  <span id = "fractxt">${result}</span>`;
+    }
+    async function clearBox() {
+      let clearBtn = document.getElementById("clear");
+      clearBtn.style = "  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5);";
+      boxOne.value = null;
+      parenKeeper = true;
+      fracGlobal = 1;
+      let delayres = await delay(300);
+      clearBtn.style = "  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);";
+    }
+    let parenKeeper = true;
+    async function parenFunc() {
+      let btn = document.getElementById("paren");
+      btn.style = "  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5);";
+      boxOne.value += "()";
+      let spaceVar = boxOne.value.length - 1;
+      console.log(spaceVar);
+      setCursorPosition(boxOne, spaceVar);
+      let delayres = await delay(300);
+      btn.style = "  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);";
+    }
+    function displayDrawer() {
+      ground = document.getElementById("background");
+      ground.style = "display: flex;";
+      drawer = document.getElementById("drawer");
+      drawer.style = "display: flex;";
+      toggle1 = document.getElementById("lines1");
+      toggle1.style = "display: none;";
+    }
+    function hideDrawer() {
+      drawer = document.getElementById("drawer");
+      drawer.style = "display: none;";
+      drawer.style = "z-index: 5;";
+      ground = document.getElementById("background");
+      ground.style = "display: none;";
+      toggle1 = document.getElementById("lines1");
+      toggle1.style = "display: flex;";
+    }
+    document
+      .getElementById("lines1")
+      .addEventListener("click", displayDrawer);
+    document.getElementById("lines").addEventListener("click", hideDrawer);
+  </script>
+</body>
+
+</html>
