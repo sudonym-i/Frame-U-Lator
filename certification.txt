@@ -1,0 +1,24 @@
+---------------------------------------------------
+Here are the ownership and the certification details
+of the Frame-ulator 6.0
+---------------------------------------------------
+
+app_name - 						Frame-ulator
+app_alias - 					simplecalcs
+app_author_name - 				My Company
+app_author_organizational - 	My Company
+app_author_organization - 		My Company
+app_author_locality - 			My Company
+app_author_state - 				Alberta
+app_author_country - 			Canada
+app_password - 					CKv1xqy5dAWo
+app_versionName - 				versionName "6.0"
+app_versionCode - 				600
+
+---------------------------------------------------
+The certification was created by WebIntoApp.com at
+the Sunday 14th of July 2024 04:50:51 PM
+
+https://www.webintoapp.com
+---------------------------------------------------
+
