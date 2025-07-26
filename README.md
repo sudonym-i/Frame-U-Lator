@@ -1,7 +1,9 @@
 # Frame-U-Lator
 
-(includes HTML optimized for desktop web, and an APK file for use on android phones)
 This app was developed as a specialized calculator for tasks that construction workers often (and rapidly) have to compute.
+
+The design prioritizes quick utilization over self explanatory UI, making it as rapidly employable a tool as possible. It 
+is build to increase the speed and accuracy of many commonly preformed/required construction on-site computations
 
 
 ![Screenshot_20250630-071218_Frame-ulator](https://github.com/user-attachments/assets/f3a5fce2-7e4e-44df-99c4-b6173e385061)
